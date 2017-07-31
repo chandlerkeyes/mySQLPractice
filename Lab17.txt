@@ -1,0 +1,43 @@
+Select * From customers;
+SELECT DISTINCT country FROM customers;
+SELECT * FROM customers
+WHERE CustomerID LIKE 'BL%';
+
+SELECT * FROM orders
+WHERE OrderID BETWEEN 10248 AND 10348;
+SELECT * From orders
+WHERE ShipPostalCode IN(1010, 3012,12209,05023);
+
+SELECT * From orders
+WHERE ShipRegion <> "NULL";
+
+Select * from orders
+order by ShipCountry, ShipCity;
+
+insert into customers 
+values ("5555", "Grand Circus", "Chandler", "fffff", "1111111", "erasfasdf", null,null,null,null, null);
+Use northwind;
+UPDATE orders 
+set ShipRegion = 'EuroZone'
+WHERE ShipCountry = 'France';
+
+DELETE FROM `order details`
+where Quantity = 1;
+SELECT MIN(Quantity)
+FROM `order details`;
+SELECT MAX(Quantity)
+FROM `order details`;
+SELECT AVG(Quantity)
+FROM `order details`;
+SELECT AVG(Quantity) FROM `order details` GROUP BY OrderID; SELECT MIN(Quantity) FROM `order details` GROUP BY OrderID; SELECT MAX(Quantity) FROM `order details` GROUP BY OrderID;
+
+
+
+SELECT CustomerID 
+FROM orders 
+WHERE OrderID = 10290;
+Select orders.EmployeeID, customers.ContactName FROM orders INNER JOIN customers INNER JOIN customers ON orders;
+SELECT Customers FROM Customers LEFT JOIN Orders ON Customers.CustomerID = Oders.CustomerID;
+SELECT Customers FROM Customers RIGHT JOIN Orders ON Customers.CustomerID = Oders.CustomerID;
+SELECT firstname FROM employees where reportsto is null
+SELECT FirstName FROM Employees WHERE reportsto = 2;
